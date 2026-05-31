@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node app_server/data/seed.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1",
-    "hbs": "^4.2.1"
+    "hbs": "^4.2.1",
+    "mongoose": "^9.6.3"
   }
 }
