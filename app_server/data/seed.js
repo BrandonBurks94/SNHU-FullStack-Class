@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const trips = require('./trips.json');
 
-require('../models/db');
+require('../../app_api/models/db');
 
 const Trip = mongoose.model('trips');
 

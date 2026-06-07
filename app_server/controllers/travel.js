@@ -1,9 +1,13 @@
-const mongoose = require('mongoose');
-const Trip = mongoose.model('trips');
-
 const travel = async (req, res) => {
   try {
-    const trips = await Trip.find({}).lean();
+    const apiUrl = `${req.protocol}://${req.get('host')}/api/trips`;
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      throw new Error(`API returned ${response.status}`);
+    }
+
+    const trips = await response.json();
 
     res.render('travel', {
       title: 'Travlr Getaways',
