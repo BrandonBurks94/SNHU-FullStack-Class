@@ -1,5 +1,6 @@
 [
   {
+    "code": "GALE-REEF",
     "name": "Gale Reef",
     "image": "reef1.jpg",
     "duration": "4 nights",
@@ -8,6 +9,7 @@
     "details": "Sed consequat libero ut turpis venenatis ut aliquam risus semper. Etiam convallis mi vel risus pretium sodales. Etiam nunc lorem ullamcorper vitae laoreet."
   },
   {
+    "code": "DAWSON-REEF",
     "name": "Dawson's Reef",
     "image": "reef2.jpg",
     "duration": "4 nights",
@@ -16,6 +18,7 @@
     "details": "vulputate, vulputate at est. Morbi aliquet viverra metus eu consectetur. In lorem dui, elementum sit amet convallis ac, tincidunt vel sapien."
   },
   {
+    "code": "CLAIRE-REEF",
     "name": "Claire's Reef",
     "image": "reef3.jpg",
     "duration": "4 nights",

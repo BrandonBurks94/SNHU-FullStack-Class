@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-require('./app_server/models/db');
+require('./app_api/models/db');
 
 const travelRouter = require('./app_server/routes/travel');
 const apiRouter = require('./app_api/routes');
@@ -19,5 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/travel', travelRouter);
 app.use('/api', apiRouter);
+app.use('/API', apiRouter);
 
 module.exports = app;
