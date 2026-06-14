@@ -1,0 +1,20 @@
+<section>
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+    <h1 class="h3 mb-0">Trip List</h1>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-outline-primary btn-sm" (click)="loadTrips()">Refresh</button>
+      <a class="btn btn-success btn-sm" routerLink="/trips/new">Add Trip</a>
+    </div>
+  </div>
+
+  <div *ngIf="statusMessage" class="alert alert-success py-2">{{ statusMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger py-2">{{ errorMessage }}</div>
+  <div *ngIf="isLoading" class="alert alert-info">Loading trips...</div>
+  <div *ngIf="!isLoading && trips.length === 0" class="alert alert-warning">No trips found.</div>
+
+  <div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-3">
+    <div class="col" *ngFor="let trip of trips">
+      <app-trip-card [trip]="trip" (delete)="deleteTrip($event)"></app-trip-card>
+    </div>
+  </div>
+</section>

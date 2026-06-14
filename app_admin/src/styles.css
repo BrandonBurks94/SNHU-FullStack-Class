@@ -1,0 +1,16 @@
+body {
+  background: #f5f7fb;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.trip-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.form-label {
+  font-weight: 600;
+}
