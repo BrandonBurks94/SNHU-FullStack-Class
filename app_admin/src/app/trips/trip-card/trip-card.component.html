@@ -1,0 +1,21 @@
+<div class="card h-100 shadow-sm">
+  <img class="card-img-top trip-image" [src]="imageBaseUrl + trip.image" [alt]="trip.name">
+  <div class="card-body d-flex flex-column">
+    <div class="d-flex justify-content-between gap-3 align-items-start">
+      <h2 class="h5 card-title mb-1">{{ trip.name }}</h2>
+      <span class="badge text-bg-secondary">{{ trip.code }}</span>
+    </div>
+    <p class="card-text text-muted mb-2">{{ trip.description }}</p>
+    <p class="card-text small flex-grow-1">{{ trip.details }}</p>
+    <dl class="row small mb-3">
+      <dt class="col-4">Duration</dt>
+      <dd class="col-8">{{ trip.duration }}</dd>
+      <dt class="col-4">Price</dt>
+      <dd class="col-8">{{ trip.price }}</dd>
+    </dl>
+    <div class="d-flex gap-2">
+      <a class="btn btn-primary btn-sm" [routerLink]="['/trips', trip.code, 'edit']">Edit</a>
+      <button type="button" class="btn btn-outline-danger btn-sm" (click)="delete.emit(trip)">Delete</button>
+    </div>
+  </div>
+</div>

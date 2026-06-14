@@ -1,0 +1,54 @@
+<section class="mx-auto" style="max-width: 760px;">
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+    <h1 class="h3 mb-0">{{ isNewTrip ? 'Add Trip' : 'Edit Trip' }}</h1>
+    <a class="btn btn-outline-secondary btn-sm" routerLink="/trips">Back to Trips</a>
+  </div>
+
+  <div *ngIf="isLoading" class="alert alert-info">Loading trip...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <form *ngIf="!isLoading" #tripForm="ngForm" class="bg-white border rounded-2 p-3 shadow-sm" (ngSubmit)="saveTrip()">
+    <div class="mb-3">
+      <label for="code" class="form-label">Code</label>
+      <input id="code" name="code" class="form-control" [(ngModel)]="trip.code" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)]="trip.name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image File</label>
+      <input id="image" name="image" class="form-control" [(ngModel)]="trip.image" required>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 mb-3">
+        <label for="duration" class="form-label">Duration</label>
+        <input id="duration" name="duration" class="form-control" [(ngModel)]="trip.duration" required>
+      </div>
+      <div class="col-sm-6 mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input id="price" name="price" class="form-control" [(ngModel)]="trip.price" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" name="description" class="form-control" rows="4" [(ngModel)]="trip.description" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="details" class="form-label">Details</label>
+      <textarea id="details" name="details" class="form-control" rows="4" [(ngModel)]="trip.details" required></textarea>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-success" [disabled]="tripForm.invalid || isSaving">
+        {{ isSaving ? 'Saving...' : 'Save Trip' }}
+      </button>
+      <a class="btn btn-outline-secondary" routerLink="/trips">Cancel</a>
+    </div>
+  </form>
+</section>
