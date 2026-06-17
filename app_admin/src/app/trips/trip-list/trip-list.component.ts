@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Trip } from '../../models/trip';
+import { AuthenticationService } from '../../services/authentication.service';
 import { TripDataService } from '../../services/trip-data.service';
 import { TripCardComponent } from '../trip-card/trip-card.component';
 
@@ -17,7 +18,10 @@ export class TripListComponent implements OnInit {
   statusMessage = '';
   errorMessage = '';
 
-  constructor(private readonly tripDataService: TripDataService) {}
+  constructor(
+    private readonly tripDataService: TripDataService,
+    private readonly authenticationService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.loadTrips();
@@ -53,5 +57,9 @@ export class TripListComponent implements OnInit {
         this.errorMessage = err.error?.message ?? 'Unable to delete trip.';
       }
     });
+  }
+
+  isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
   }
 }
