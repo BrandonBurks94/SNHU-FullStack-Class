@@ -13,7 +13,7 @@
       <dt class="col-4">Price</dt>
       <dd class="col-8">{{ trip.price }}</dd>
     </dl>
-    <div class="d-flex gap-2">
+    <div class="d-flex gap-2" *ngIf="isLoggedIn()">
       <a class="btn btn-primary btn-sm" [routerLink]="['/trips', trip.code, 'edit']">Edit</a>
       <button type="button" class="btn btn-outline-danger btn-sm" (click)="delete.emit(trip)">Delete</button>
     </div>

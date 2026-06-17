@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
+const passport = require('passport');
 
+require('dotenv').config();
 require('./app_api/models/db');
+require('./app_api/config/passport');
 
 const travelRouter = require('./app_server/routes/travel');
 const apiRouter = require('./app_api/routes');
@@ -25,7 +28,7 @@ app.use((req, res, next) => {
   }
 
   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
   if (req.method === 'OPTIONS') {
     return res.sendStatus(204);
@@ -39,9 +42,18 @@ app.get('/travel.html', (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use('/travel', travelRouter);
 app.use('/api', apiRouter);
 app.use('/API', apiRouter);
+
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    return res.status(401).json({ message: `${err.name}: ${err.message}` });
+  }
+
+  return next(err);
+});
 
 module.exports = app;

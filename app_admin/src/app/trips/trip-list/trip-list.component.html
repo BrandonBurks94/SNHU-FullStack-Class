@@ -3,7 +3,7 @@
     <h1 class="h3 mb-0">Trip List</h1>
     <div class="d-flex gap-2">
       <button type="button" class="btn btn-outline-primary btn-sm" (click)="loadTrips()">Refresh</button>
-      <a class="btn btn-success btn-sm" routerLink="/trips/new">Add Trip</a>
+      <a class="btn btn-success btn-sm" routerLink="/trips/new" *ngIf="isLoggedIn()">Add Trip</a>
     </div>
   </div>
 
