@@ -73,7 +73,7 @@ img {
 #navigation li a {
 	color: #fff;
 	display: block;
-	font: bold 14px/48px Arial, Helvetica, sans-serif;
+	font: bold 13px/48px Arial, Helvetica, sans-serif;
 	height: 49px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -452,6 +452,86 @@ hr {
 }
 #contact p span {
 	display: block;
+	text-transform: uppercase;
+}
+.travlr-form {
+	color: #5a4535;
+	width: 360px;
+	margin: 0 0 24px 2px;
+}
+.travlr-form label {
+	display: block;
+	font: bold 14px/22px Arial, Helvetica, sans-serif;
+	margin-top: 12px;
+	text-transform: uppercase;
+}
+.travlr-form input[type="email"],
+.travlr-form input[type="password"],
+.travlr-form input[type="text"] {
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px solid #5a4535;
+	border-radius: 2px;
+	font-size: 15px;
+	line-height: 24px;
+	padding: 4px 6px;
+}
+.travlr-form .checkbox-label {
+	font-weight: normal;
+	text-transform: none;
+}
+.travlr-form .checkbox-label input {
+	margin-right: 6px;
+}
+.travlr-form .btn {
+	background-color: #316e66;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+	border-radius: 2px;
+	font: bold 14px/32px Arial, Helvetica, sans-serif;
+	margin-top: 16px;
+	padding: 0 18px;
+	text-transform: uppercase;
+}
+.travlr-message,
+.account-status,
+.reservation-item {
+	background: #f8f3dc;
+	border: 1px solid #c8b88a;
+	color: #5a4535;
+	margin: 0 0 18px 2px;
+	padding: 10px 12px;
+}
+.travlr-message:empty {
+	display: none;
+}
+.travlr-message.error {
+	background: #f8dddd;
+	border-color: #bb7777;
+}
+.travlr-message.success {
+	background: #dff2e4;
+	border-color: #7caf88;
+}
+.account-status button {
+	background: none;
+	border: 0;
+	color: #316e66;
+	cursor: pointer;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.reservation-item h2 {
+	margin-bottom: 8px;
+}
+.reserve-link {
+	background-color: #316e66;
+	color: #fff;
+	display: inline-block;
+	font: bold 13px/30px Arial, Helvetica, sans-serif;
+	padding: 0 12px;
+	text-decoration: none;
 	text-transform: uppercase;
 }
 /*------------------------------ FOOTER ------------------------------*/
