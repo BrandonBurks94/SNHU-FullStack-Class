@@ -13,19 +13,19 @@
 						<a href="/travel">Travel</a>
 					</li>
 					<li>
-						<a href="/rooms.html">Rooms</a>
-					</li>
-					<li>
-						<a href="/meals.html">Meals</a>
-					</li>
-					<li>
 						<a href="/news.html">News</a>
 					</li>
 					<li>
-						<a href="/about.html">About</a>
+						<a href="/reservations.html">Reservations</a>
 					</li>
 					<li>
-						<a href="/contact.html">Contact</a>
+						<a href="/checkout.html">Checkout</a>
+					</li>
+					<li>
+						<a href="/login.html">Login</a>
+					</li>
+					<li>
+						<a href="http://127.0.0.1:4200">Admin</a>
 					</li>
 				</ul>
 			</div>
@@ -52,6 +52,9 @@
 								<p>
 									<strong>Price:</strong> {{price}}
 								</p>
+								<p>
+									<a class="reserve-link" href="/reservations.html?code={{code}}&name={{name}}&duration={{duration}}&price={{price}}">Reserve Trip</a>
+								</p>
 							</li>
 							{{/each}}
 						</ul>
@@ -70,19 +73,19 @@
 					<a href="/travel">Travel</a>
 				</li>
 				<li>
-					<a href="/rooms.html">Rooms</a>
-				</li>
-				<li>
-					<a href="/meals.html">Meals</a>
-				</li>
-				<li>
 					<a href="/news.html">News</a>
 				</li>
 				<li>
-					<a href="/about.html">About</a>
+					<a href="/reservations.html">Reservations</a>
 				</li>
 				<li>
-					<a href="/contact.html">Contact</a>
+					<a href="/checkout.html">Checkout</a>
+				</li>
+				<li>
+					<a href="/login.html">Login</a>
+				</li>
+				<li>
+					<a href="http://127.0.0.1:4200">Admin</a>
 				</li>
 			</ul>
 			<div id="connect">
@@ -90,7 +93,8 @@
 			</div>
 		</div>
 		<p>
-			&copy; 2023 by Travlr Getaways. All Rights Reserved
+			&copy; 2026 by Travlr Getaways. All Rights Reserved
 		</p>
 	</div>
+	<script src="/js/travlr-public.js"></script>
 </div>
