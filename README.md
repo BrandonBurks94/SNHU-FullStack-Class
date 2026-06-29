@@ -1,7 +1,11 @@
 Travlr Getaways Full Stack Web Application
+
 Overview
+
 Through this Travlr Getaways project I developed a full-stack web-based application (using MEAN) for use as a travel website with a user interface and also for an administrator to use for managing the trip data through a single page application. With regards to functionality, the user will be able to view all of the relevant information related to traveling, while the admin can safely login and edit/manipulate their own data. In addition to developing this application, during this process I learned how all the different components of a full-stack application function; such as front-end development, back-end development, database design, API route management and how security functions within these applications.
+
 Architecture
+
 Compare and contrast the types of frontend development you used in your full stack project, including Express HTML, JavaScript, and the single-page application.
 I utilized several forms of Frontend Development within this Project. 
 The Express HTML Pages were used for the customer facing side of the website (Travlr Getaways). The static content pages were rendered on the server. The static/mostly static content pages served as a good base for rendering static content that is accessible by a normal User.
@@ -12,14 +16,18 @@ In general, Express HTML worked well for public customer-facing pages; However, 
 Why did the backend use a NoSQL MongoDB database?
 The backend utilized MongoDB for several reasons. The travel data fits well within the document based database structure of MongoDB. Data is stored by MongoDB in flexible JSON like documents. This makes working with trip information easier because it can have different fields or change over time. Examples of trip details that may include destination, length, resort name, price and description.
 Additionally, MongoDB was a good choice for the backend as it works naturally with applications built in JavaScript. The rest of the stack utilized Node.js, Express and angular. So using MongoDB helped to keep the format consistent between frontend/backend data.
+
 Functionality
+
 How is JSON different from JavaScript and how does JSON tie together the frontend and backend development pieces?
 Javascript was the programming language used to develop logic and functionality within the app. Json was a data format that was used to pass data back and forth between apps and systems. Although json resembles javascript objects, they are different. The primary use of json has been passing data from system to system.
 Json played a big role with connecting the front-end to the back-end of the travlr getaways application. The back end api would send data about trips as json, then angular would take this data and use it to populate and refresh the data on the admins interface when new/edited trip info was entered by the admin. The json provided a way for both sides to speak the same language.
 Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable UI components.
 I found two examples of how I refactored my project. The first way I refactored is by switching from static HTML pages to MVC layout with routing, controllers, views and templates. It organized my project better than before when the application logic was mixed in with the view files. Now I can separate the application logic and the views into their own respective files. 
 The second example of how I refactored was the use of Angular components in the single page application. Since Angular components are reusable UI elements, they greatly increased efficiency on the admin side of the application because I had to create each element once and reuse them wherever I wanted throughout the application. As a result of this, there wasn't as much duplicated code and it would be significantly easier for me to make changes if something needed to be updated.
+
 Testing
+
 Explain your understanding of methods, endpoints, and security in a full stack application.
 In full-stack applications, an application's back-end receives input from the front end through APIs. The back-end sends this input to its database, which stores it. When the application's front-end wants to view data on the back-end, the front-end uses the back-end's API to request the data. The back-end then retrieves the requested data from the database and returns it to the front-end. Each of these interactions occurs using methods and endpoints. 
 Methods are used to identify how a function will operate. Some examples include: 
@@ -31,7 +39,9 @@ Endpoints are identified by their URL and define where you want your function to
 By performing tests of your API, you are able to test both how well your front-end communicates with your back-end and if your application is storing and retrieving data in a way consistent with expectations.
 The addition of security adds even further complexity to testing since some endpoints should only be accessible to authenticated users. Since a secure login authentication feature has been implemented into the admin portion of the Travlr Getaways application, testing now requires confirmation that not only does the endpoint work as expected, but that unauthenticated users are prevented from viewing protected admin data or completing restricted actions.
 Because many full-stack applications manage sensitive customer information or provide protected administrative functionality, security testing is essential. Authentication provides proof of identity; Authorization determines what the authenticated user is permitted to perform.
+
 Reflection
+
 How has this course helped you in reaching your professional goals? What skills have you learned, developed, or mastered in this course to help you become a more marketable candidate in your career field?
 Working on this course has helped me improve the planning, construction, connection, and protection of full-stack applications. Prior to developing the project, I had knowledge of separate elements of web development, however this course demonstrated how each element works together as one complete application. 
 I have improved my skill level utilizing Node.js, Express, MongoDB, Angular, routing, controllers, templates, API testing, and securely authenticating user logins. In addition to improving my technical abilities in these areas, I have furthered my ability to refactor code and organize a project in such a manner that makes it easier to maintain. Having to build out both the customer facing portion of the site and the admin single page application helped me understand why there would be multiple ways to approach the frontend portions of an application depending upon which part you were dealing with. 
